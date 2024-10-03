@@ -1,0 +1,33 @@
+@model List<ContactFormModel>
+<h2>Forms</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No forms available for this category.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var form in Model)
+            {
+                <tr>
+                    <td>@form.FullName</td>
+                    <td>@form.Phone</td>
+                    <td>@form.Email</td>
+                    <td>@form.Department</td>
+                    <td>@form.Message</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
